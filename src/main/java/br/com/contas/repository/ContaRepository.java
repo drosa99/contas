@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContaRepository extends JpaRepository<ContaEntity, String> {
-    Page<ContaEntity> findAllOrderByDataCriacao(Pageable pageable);
+    Page<ContaEntity> findAll(Pageable pageable);
 }

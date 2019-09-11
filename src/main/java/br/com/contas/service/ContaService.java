@@ -31,7 +31,7 @@ public class ContaService {
     }
 
     public PageOut<ContaResponse> listagemPaginadaContas(Pageable pageable) {
-        Page<ContaEntity> contaEntityPage = contaRepository.findAllOrderByDataCriacao(pageable);
+        Page<ContaEntity> contaEntityPage = contaRepository.findAll(pageable);
         PageOut<ContaResponse> contaResponsePageOut = new PageOut<>();
         contaResponsePageOut.setTotalElements(contaEntityPage.getTotalElements());
         List<ContaResponse> contaResponses = contaEntityPage.stream()
@@ -69,5 +69,8 @@ public class ContaService {
         contaEntity.setStatus(contaBanco.getStatus());
     }
 
-    //ver porque as mensagens no request nao estao linkando
+    //TODO: ver porque as mensagens no request nao estao linkand
+    //TODO: agencia, numero tem que ser digitos
+    //TODO: colocar validacao de cpf do stella
+    //todo: tirar codigo de exceptions nao usado
 }

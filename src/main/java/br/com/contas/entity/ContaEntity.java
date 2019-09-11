@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,12 +19,12 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "CONTA")
 public class ContaEntity implements Serializable {
-    //private static final long serialVersionUID
+    private static final long serialVersionUID = 2606424908548969648L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQIDCONTA")
-    @SequenceGenerator(sequenceName = "SEQIDCONTA", name = "SEQIDCONTA", allocationSize = 1)
-    @Column(name = "OID_ESCOLA")
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(name = "OID_CONTA")
     private String id;
 
     @Column(name = "NUMERO")
