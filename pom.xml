@@ -33,7 +33,7 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
-
+        
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -64,12 +64,6 @@
             <artifactId>lombok</artifactId>
             <version>[1.18.4,)</version>
         </dependency>
-        <!--Oracle-->
-        <!--    <dependency>-->
-        <!--        <groupId>com.oracle.jdbc</groupId>-->
-        <!--        <artifactId>ojdbc8</artifactId>-->
-        <!--        <version>12.2.0.1</version>-->
-        <!--    </dependency>-->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
@@ -94,6 +88,13 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-java8</artifactId>
+        </dependency>
+
+        <!-- Validação de CPF -->
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-bean-validation</artifactId>
+            <version>2.1.2</version>
         </dependency>
     </dependencies>
 

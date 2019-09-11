@@ -19,6 +19,7 @@ public class ContaMapper {
                 .agencia(contaEntity.getAgencia())
                 .cpf(contaEntity.getCpf())
                 .numero(contaEntity.getNumero())
+                .status(contaEntity.getStatus())
                 .dataAtualizao(contaEntity.getDataAtualizao())
                 .dataCriacao(contaEntity.getDataCriacao())
                 .build();

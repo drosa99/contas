@@ -1,6 +1,5 @@
 package br.com.contas.config.swagger;
 
-import br.com.contas.exception.SimpleError;
 import com.fasterxml.classmate.TypeResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +23,6 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(true)
                 .directModelSubstitute(LocalTime.class, String.class)
-                .additionalModels(typeResolver.resolve(SimpleError.class))
                 .select()
                 .paths(PathSelectors.any())
                 .apis(RequestHandlerSelectors.any())

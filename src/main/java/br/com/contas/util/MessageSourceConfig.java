@@ -10,7 +10,7 @@ public class MessageSourceConfig {
     @Bean
     public ReloadableResourceBundleMessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasenames("classpath:messages/messages", "classpath:commons/messages");
+        messageSource.setBasenames("classpath:messages/messages", "classpath:contas/messages");
         return messageSource;
     }
 }

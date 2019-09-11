@@ -2,7 +2,7 @@ package br.com.contas.api;
 
 import br.com.contas.api.request.ContaRequest;
 import br.com.contas.api.response.ContaResponse;
-import br.com.contas.config.dto.PageOut;
+import br.com.contas.dto.PageOut;
 import br.com.contas.service.ContaService;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -25,7 +25,6 @@ public class ContaApi {
 
     @PostMapping("")
     @ApiOperation(value = "Cadastra uma conta.")
-    //@ApiResponses(@ApiResponse(code = HttpUtil.OK, message = HttpUtil.OK_MESSAGE))
     public ResponseEntity cadastrarConta(@Valid @RequestBody() ContaRequest contaRequest) {
         LOGGER.info("Iniciado cadastro de nova conta.");
         contaService.cadastroConta(contaRequest);
@@ -33,7 +32,7 @@ public class ContaApi {
         return ResponseEntity.ok(Void.class);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     @ApiOperation(value = "Edita uma conta")
     public ResponseEntity editarConta(@PathVariable String id, @Valid @RequestBody() ContaRequest contaRequest) {
         LOGGER.info("Iniciada edicao de conta.");
@@ -42,7 +41,7 @@ public class ContaApi {
         return ResponseEntity.ok(Void.class);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     @ApiOperation(value = "Buscar detalhe de uma conta")
     public ResponseEntity<ContaResponse> buscarContaPorId(@PathVariable String id) {
         LOGGER.info("Iniciada busca de conta.");
@@ -71,7 +70,4 @@ public class ContaApi {
         LOGGER.info("Finalizada desativação de conta.");
         return ResponseEntity.ok(Void.class);
     }
-
-
-    //ver porque http util nao esta funfando
 }

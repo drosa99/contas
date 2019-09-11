@@ -24,6 +24,8 @@ public class ContaResponse {
     private String agencia;
     @ApiModelProperty(value = "CPF do usuário da conta")
     private String cpf;
+    @ApiModelProperty(value = "Status da conta: 0 - desativada; 1 - ativa")
+    private Boolean status;
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonFormat(pattern = "dd/MM/yyyy")

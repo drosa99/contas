@@ -9,8 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleErrorTranslator {
 
-    @Autowired(required = false)
+    @Autowired
     private Messages messages;
+
+    public SimpleErrorTranslator() {
+    }
 
     private String message(String i18nKey, Object... args) {
         if (messages == null) {
